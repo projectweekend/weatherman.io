@@ -2,9 +2,10 @@
     "author": "Brian Hines",        
     "name": "weatherman.io",
     "description": "A simple Node.js module for integrating with the Forecast.io API",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "repository": {
-        "url": "https://github.com/projectweekend/weatherman.io"
+        "type": "git",
+        "url": "git://github.com/projectweekend/weatherman.io.git"
     },
     "main": "./lib/weatherman.io.js",
     "devDependencies": {
