@@ -7,7 +7,7 @@
         "url": "https://github.com/projectweekend/weatherman.io"
     },
     "main": "./lib/weatherman.io.js",
-    "dependencies": {
+    "devDependencies": {
         "chai": "~1.9.1",
         "mocha": "~1.18.2"
     }
