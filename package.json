@@ -1,0 +1,14 @@
+{
+    "author": "Brian Hines",        
+    "name": "weatherman.io",
+    "description": "A simple Node.js module for integrating with the Forecast.io API",
+    "version": "0.1.0",
+    "repository": {
+        "url": "https://github.com/projectweekend/weatherman.io"
+    },
+    "main": "./lib/weatherman.io.js",
+    "dependencies": {
+        "chai": "~1.9.1",
+        "mocha": "~1.18.2"
+    }
+}
