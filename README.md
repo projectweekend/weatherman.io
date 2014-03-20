@@ -3,6 +3,10 @@ weatherman.io
 
 A simple Node.js module for integrating with the [Forecast.io API](https://developer.forecast.io/).
 
+### Installation
+
+`npm install weatherman.io`
+
 ### Create a weatherman
 
 ```
