@@ -50,3 +50,17 @@ A simple Node.js module for integrating with the [Forecast.io API](https://devel
      // do something with the weatherReport
  } );
 ```
+
+### Set custom options
+
+Set the options object with the desired properties before calling `doForecast`. You only need to define the option properties you need. The example below demonstrates changing all three at once.
+
+```
+alRoker.options = {
+    units: "uk",
+    exclude: ["minutely", "alerts"],
+    extend: "hourly"
+};
+```
+
+A detailed explanation of each of these items is available in the Forecast.io developer docs: [https://developer.forecast.io/docs/v2](https://developer.forecast.io/docs/v2)
