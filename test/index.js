@@ -16,11 +16,16 @@ describe( 'weatherman', function () {
 
 	describe( "sending on location", function () {
 
-		alRoker.goOnLocation( 41.8854710, -87.6430260 );
+		alRoker.goOnLocation( 41.885471, -87.643026 );
 
 		it( "should have latitude and longitude", function () {
-			expect( alRoker ).to.have.a.property( 'config' ).with.property( 'latitude', 41.8854710 );
-			expect( alRoker ).to.have.a.property( 'config' ).with.property( 'longitude', -87.6430260 );
+			expect( alRoker ).to.have.a.property( 'config' ).with.property( 'latitude', 41.885471 );
+			expect( alRoker ).to.have.a.property( 'config' ).with.property( 'longitude', -87.643026 );
+		} );
+
+		it( "should have a valid api path", function () {
+			var apiPath = alRoker.buildPathString();
+			expect( apiPath ).to.equal("/forecast/forecast-io-api-key/41.885471,-87.643026");
 		} );
 
 	} );
