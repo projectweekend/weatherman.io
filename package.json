@@ -2,6 +2,8 @@
     "author": "Brian Hines",        
     "name": "weatherman.io",
     "description": "A simple Node.js module for integrating with the Forecast.io API",
+    "keywords": ["weather", "forecast", "forecast.io"],
+    "license": "MIT",
     "version": "0.1.2",
     "repository": {
         "type": "git",
