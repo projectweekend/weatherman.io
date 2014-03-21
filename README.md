@@ -5,7 +5,9 @@ A simple Node.js module for integrating with the [Forecast.io API](https://devel
 
 ### Install it
 
-`npm install weatherman.io`
+```
+ npm install weatherman.io
+```
 
 ### Create a weatherman
 
