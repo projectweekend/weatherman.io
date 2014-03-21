@@ -12,7 +12,7 @@ A simple Node.js module for integrating with the [Forecast.io API](https://devel
 ### Create a weatherman
 
 ```
- var weatherman = require( 'weatherman' );
+ var weatherman = require( 'weatherman.io' );
 
  var alRoker = weatherman( 'your-forecast-io-api-key' );
 ```
