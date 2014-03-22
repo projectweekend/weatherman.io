@@ -4,7 +4,7 @@
     "description": "A simple Node.js module for integrating with the Forecast.io API",
     "keywords": ["weather", "forecast", "forecast.io"],
     "license": "MIT",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "repository": {
         "type": "git",
         "url": "git://github.com/projectweekend/weatherman.io.git"
