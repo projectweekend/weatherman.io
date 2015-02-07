@@ -1,17 +1,35 @@
 {
-    "author": "Brian Hines",        
-    "name": "weatherman.io",
-    "description": "A simple Node.js module for integrating with the Forecast.io API",
-    "keywords": ["weather", "forecast", "forecast.io"],
-    "license": "MIT",
-    "version": "0.1.5",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/projectweekend/weatherman.io.git"
-    },
-    "main": "./lib/weatherman.io.js",
-    "devDependencies": {
-        "chai": "~1.9.1",
-        "mocha": "~1.18.2"
-    }
+  "name": "weatherman.io",
+  "version": "0.1.6",
+  "description": "A Node.js module for the Forecast.io API",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "is_js": "^0.4.0",
+    "request": "^2.53.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2",
+    "chai": "^1.9.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/projectweekend/weatherman.io.git"
+  },
+  "keywords": [
+    "weather",
+    "forecast",
+    "forecast.io"
+  ],
+  "author": "Brian Hines",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/projectweekend/weatherman.io/issues"
+  },
+  "homepage": "https://github.com/projectweekend/weatherman.io"
 }
