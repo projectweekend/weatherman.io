@@ -14,7 +14,7 @@ var weatherman = require( "weatherman.io" );
 ### Create a weatherman
 
 ```javascript
-var alRoker = weatherman( "your-forecast-io-api-key" );
+var alRoker = new weatherman( "your-forecast-io-api-key" );
 ```
 
 
@@ -27,7 +27,7 @@ var options = {
     extend: "hourly"
 };
 
-var alRoker = weatherman( "your-forecast-io-api-key", options );
+var alRoker = new weatherman( "your-forecast-io-api-key", options );
 ```
 
 Detailed information about each of these options is available in the Forecast.io developer docs: [https://developer.forecast.io/docs/v2](https://developer.forecast.io/docs/v2)
