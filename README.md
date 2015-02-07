@@ -41,7 +41,7 @@ var forecastOptions = {
     longitude: -87.6430260
 };
 
-alRoker.doForecast( options, function ( err, weatherReport ) {
+alRoker.doForecast( forecastOptions, function ( err, weatherReport ) {
 
     if ( err ) {
         // handle any errors
@@ -61,7 +61,7 @@ var forecastOptions = {
     time: 1395347280
 };
 
-alRoker.doForecast( options, function ( err, weatherReport ) {
+alRoker.doForecast( forecastOptions, function ( err, weatherReport ) {
 
     if ( err ) {
         // handle any errors
