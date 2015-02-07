@@ -1,51 +1,64 @@
-var expect = require('chai').expect,
-	weatherman = require('../lib/weatherman.io');
+var expect = require( "chai" ).expect,
+	weatherman = require( "../lib/weatherman" );
 
 
-describe( 'weatherman', function () {
-	
-	var alRoker = weatherman( "forecast-io-api-key" );
+describe( "weatherman", function () {
 
-	describe( "setting up", function () {
+	var alRoker = new weatherman( "forecast-io-api-key" );
 
-		it( "should have an API Key", function () {
-			expect( alRoker ).to.have.a.property( 'config' ).with.property( 'apiKey', "forecast-io-api-key" );
+	describe( "creating an instance with an API key", function () {
+
+		it( "should have an API Key", function ( done ) {
+
+			expect( alRoker ).to.have.a.property( "_apiKey", "forecast-io-api-key" );
+			done();
+
 		} );
 
 	} );
 
-	describe( "sending on location", function () {
+	describe( "creating an instance without an API key", function () {
 
-		var alRoker = weatherman( "forecast-io-api-key" );
-		alRoker.goOnLocation( 41.885471, -87.643026 );
+	    it( "should throw an error", function ( done ) {
 
-		it( "should have latitude and longitude", function () {
-			expect( alRoker ).to.have.a.property( 'config' ).with.property( 'latitude', 41.885471 );
-			expect( alRoker ).to.have.a.property( 'config' ).with.property( 'longitude', -87.643026 );
-		} );
+	        expect( weatherman ).to.throw( "weatherman.io requires a Forecast.io API key" );
+	        done();
 
-		it( "should have a valid api path", function () {
-			var apiPath = alRoker.buildPathString();
-			expect( apiPath ).to.equal("/forecast/forecast-io-api-key/41.885471,-87.643026");
+	    } );
+
+	} );
+
+	describe( "the API URL", function () {
+
+		var alRoker = new weatherman( "forecast-io-api-key" );
+		var apiUrl = alRoker._requestUrl( 41.885471, -87.643026 );
+
+		it( "should be formatted correctly", function ( done ) {
+
+			expect( apiUrl ).to.equal( "https://api.forecast.io/forecast/forecast-io-api-key/41.885471,-87.643026" );
+			done();
+
 		} );
 
 	} );
 
-	describe( "setting options", function () {
-		
-		var alRoker = weatherman( "forecast-io-api-key" );
-		alRoker.goOnLocation( 41.885471, -87.643026 );
-		alRoker.options = {
+	describe( "creating an instance with options", function () {
+
+		var options = {
 			units: "us",
-			exclude: ["hourly","minutely"],
+			exclude: [ "hourly", "minutely" ],
 			extend: "hourly"
 		};
 
-		it( "should have a valid api path", function () {
-			var apiPath = alRoker.buildPathString();
-			expect( apiPath ).to.equal("/forecast/forecast-io-api-key/41.885471,-87.643026?units=us&exclude=hourly,minutely&extend=hourly");
+		var alRoker = new weatherman( "forecast-io-api-key", options );
+
+		it( "should have populated the _forecastIoOptions property", function ( done ) {
+
+			expect( alRoker._forecastIoOptions ).to.equal( options );
+			done();
+
 		} );
 
 	} );
-	
+
 } );
