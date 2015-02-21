@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Weatherman.io by projectweekend</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Weatherman.io</h1>
+        <p>A Node.js module for the Forecast.io API.</p>
+
+        <p class="view"><a href="https://github.com/projectweekend/weatherman.io">View the Project on GitHub <small>projectweekend/weatherman.io</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/projectweekend/weatherman.io/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/projectweekend/weatherman.io/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/projectweekend/weatherman.io">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a id="install-it" class="anchor" href="#install-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install it</h3>
+
+<pre><code> npm install weatherman.io
+</code></pre>
+
+<h3>
+<a id="require-it" class="anchor" href="#require-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>Require it</h3>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> weatherman <span class="pl-k">=</span> <span class="pl-s3">require</span>( <span class="pl-s1"><span class="pl-pds">"</span>weatherman.io<span class="pl-pds">"</span></span> );</pre></div>
+
+<h3>
+<a id="create-a-weatherman" class="anchor" href="#create-a-weatherman" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a weatherman</h3>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> alRoker <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">weatherman</span>( <span class="pl-s1"><span class="pl-pds">"</span>your-forecast-io-api-key<span class="pl-pds">"</span></span> );</pre></div>
+
+<h3>
+<a id="create-a-weatherman-with-options" class="anchor" href="#create-a-weatherman-with-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a weatherman with options</h3>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> options <span class="pl-k">=</span> {
+    units<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>uk<span class="pl-pds">"</span></span>,
+    exclude<span class="pl-k">:</span> [<span class="pl-s1"><span class="pl-pds">"</span>minutely<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>alerts<span class="pl-pds">"</span></span>],
+    extend<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>hourly<span class="pl-pds">"</span></span>
+};
+
+<span class="pl-s">var</span> alRoker <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">weatherman</span>( <span class="pl-s1"><span class="pl-pds">"</span>your-forecast-io-api-key<span class="pl-pds">"</span></span>, options );</pre></div>
+
+<p>Detailed information about each of these options is available in the Forecast.io developer docs: <a href="https://developer.forecast.io/docs/v2">https://developer.forecast.io/docs/v2</a></p>
+
+<h3>
+<a id="do-the-forecast-from-a-location" class="anchor" href="#do-the-forecast-from-a-location" aria-hidden="true"><span class="octicon octicon-link"></span></a>Do the forecast from a location</h3>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> forecastOptions <span class="pl-k">=</span> {
+    latitude<span class="pl-k">:</span> <span class="pl-c1">41.8854710</span>,
+    longitude<span class="pl-k">:</span> <span class="pl-k">-</span><span class="pl-c1">87.6430260</span>
+};
+
+alRoker.doForecast( forecastOptions, <span class="pl-st">function</span> ( <span class="pl-vpf">err</span>, <span class="pl-vpf">weatherReport</span> ) {
+
+    <span class="pl-k">if</span> ( err ) {
+        <span class="pl-c">// handle any errors</span>
+    }
+    <span class="pl-c">// do something with the weatherReport</span>
+
+} );</pre></div>
+
+<h3>
+<a id="do-the-forecast-for-a-specific-time-unix-timestamp" class="anchor" href="#do-the-forecast-for-a-specific-time-unix-timestamp" aria-hidden="true"><span class="octicon octicon-link"></span></a>Do the forecast for a specific time (Unix timestamp)</h3>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> forecastOptions <span class="pl-k">=</span> {
+    latitude<span class="pl-k">:</span> <span class="pl-c1">41.8854710</span>,
+    longitude<span class="pl-k">:</span> <span class="pl-k">-</span><span class="pl-c1">87.6430260</span>,
+    time<span class="pl-k">:</span> <span class="pl-c1">1395347280</span>
+};
+
+alRoker.doForecast( forecastOptions, <span class="pl-st">function</span> ( <span class="pl-vpf">err</span>, <span class="pl-vpf">weatherReport</span> ) {
+
+    <span class="pl-k">if</span> ( err ) {
+        <span class="pl-c">// handle any errors</span>
+    }
+    <span class="pl-c">// do something with the weatherReport</span>
+
+} );</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/projectweekend">projectweekend</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
